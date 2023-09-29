@@ -16,11 +16,12 @@ import java.io.Serializable;
     // Sorting objects, Object transmission, Caching and Session Manager.
 public class User implements Serializable {
     //specify the Primary Key
-    @Id
+    //@Id
     //identify the primary key and specify the strategy of PK that is auto-increment
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
-    private String cin;
+    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    //private int userId;
+    @EmbeddedId
+    private UserId id;
     private String name;
     private String email ;
 }
