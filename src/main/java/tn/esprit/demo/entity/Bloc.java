@@ -15,8 +15,8 @@ import java.io.Serializable;
 public class Bloc implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idBloc;
-    String nomBloc;
-    long capaciteBloc;
+    private Long idBloc;
+    private String nomBloc;
+    private long capaciteBloc;
 
 }

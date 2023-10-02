@@ -15,7 +15,7 @@ import java.io.Serializable;
 public class Foyer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idFoyer;
-    String nomFoyer;
-    long capaciteFoyer;
+    private Long idFoyer;
+    private String nomFoyer;
+    private long capaciteFoyer;
 }

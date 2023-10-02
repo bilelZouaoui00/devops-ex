@@ -16,10 +16,10 @@ import java.util.Date;
 public class Etudiant implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long idEtudiant ;
-    String nomEt;
-    String prenomEt;
-    Long cin;
-    String ecole;
-    Date dateNaissance ;
+    private long idEtudiant ;
+    private String nomEt;
+    private String prenomEt;
+    private Long cin;
+    private String ecole;
+    private Date dateNaissance ;
 }
