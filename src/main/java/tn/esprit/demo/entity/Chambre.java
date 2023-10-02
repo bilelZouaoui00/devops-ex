@@ -18,7 +18,7 @@ public class Chambre implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long idChambre;
+    Long idChambre;
     long numeroChambre;
     TypeChambre typeC;
 

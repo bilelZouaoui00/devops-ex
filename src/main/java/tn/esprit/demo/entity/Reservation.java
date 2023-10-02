@@ -16,7 +16,7 @@ import java.util.Date;
 public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    String idReservation;
+    Long idReservation;
     Date anneeUniversitaire;
     boolean estValide;
 }

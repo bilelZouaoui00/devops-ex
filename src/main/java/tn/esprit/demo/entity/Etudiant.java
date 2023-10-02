@@ -19,7 +19,7 @@ public class Etudiant implements Serializable {
     long idEtudiant ;
     String nomEt;
     String prenomEt;
-    long cin;
+    Long cin;
     String ecole;
     Date dateNaissance ;
 }
