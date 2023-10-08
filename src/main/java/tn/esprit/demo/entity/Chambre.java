@@ -1,13 +1,11 @@
 package tn.esprit.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import tn.esprit.demo.entity.TypeChambre;
 
@@ -21,5 +19,8 @@ public class Chambre implements Serializable {
     private Long idChambre;
     private long numeroChambre;
     private TypeChambre typeC;
+
+    @OneToMany
+    Set<Reservation> reservations;
 
 }

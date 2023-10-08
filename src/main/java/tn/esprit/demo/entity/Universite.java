@@ -1,9 +1,6 @@
 package tn.esprit.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,4 +16,6 @@ public class Universite implements Serializable {
     private  Long idUniversite;
     private String nomUniversite;
     private String adresse;
+    @OneToOne
+    private Foyer foyer;
 }

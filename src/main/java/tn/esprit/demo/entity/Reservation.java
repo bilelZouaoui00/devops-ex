@@ -1,14 +1,12 @@
 package tn.esprit.demo.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Setter
@@ -19,4 +17,6 @@ public class Reservation implements Serializable {
     private Long idReservation;
     private Date anneeUniversitaire;
     private Boolean estValide;
+    @ManyToMany
+    Set<Etudiant>  etudiants;
 }
