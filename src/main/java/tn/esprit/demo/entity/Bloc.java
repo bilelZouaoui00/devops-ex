@@ -16,7 +16,9 @@ public class Bloc implements Serializable {
     private Long idBloc;
     private String nomBloc;
     private long capaciteBloc;
-    @OneToMany
-    Set <Chambre> chambres;
+    @ManyToOne
+    Chambre chambres;
+    @ManyToOne
+    Foyer foyer;
 
 }

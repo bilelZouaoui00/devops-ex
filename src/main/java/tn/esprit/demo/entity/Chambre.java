@@ -23,4 +23,5 @@ public class Chambre implements Serializable {
     @OneToMany
     Set<Reservation> reservations;
 
+
 }

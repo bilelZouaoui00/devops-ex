@@ -20,7 +20,7 @@ public class Foyer implements Serializable {
     //Mapped by in the child
     @OneToOne(mappedBy="foyer")
     private Universite universite;
-    @OneToMany
+    //@OneToMany
     //pour assurer que les doublant ne serar pas accepter
-    Set<Bloc> blocs;
+    //Set<Bloc> blocs;
 }
