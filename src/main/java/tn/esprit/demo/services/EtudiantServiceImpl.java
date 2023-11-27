@@ -1,5 +1,6 @@
 package tn.esprit.demo.services;
 
+import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.demo.entity.Etudiant;
@@ -22,6 +23,19 @@ public class EtudiantServiceImpl implements IEtudiantService {
     public Etudiant updateEtudiant(Etudiant etudiant) {
         return etudiantRepository.save(etudiant);
     }
+
+    @Override
+    public Etudiant updateEtudiantWithParm(long id, Etudiant etudiant) {
+        // Vérifier si l'étudiant existe avant de le mettre à jour
+        if (etudiantRepository.existsById(id)) {
+            etudiant.setIdEtudiant(id);
+            return etudiantRepository.save(etudiant);
+        } else {
+            // Gérer le cas où l'étudiant n'existe pas
+            throw new EntityNotFoundException("Etudiant avec l'ID " + id + " non trouvé.");
+        }
+    }
+
 
     @Override
     public void supprimerEtudiant(long idEtudiant) {
