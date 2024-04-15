@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+    maven 'maven'
+    }
 
     stages {
         stage('Getting Project') {
@@ -38,7 +41,7 @@ pipeline {
                    -Dsonar.url=http://192.168.1.15:9000/ \
                    -Dsonar.login=squ_f611dd88c6ac1d4a02702ff70200e36b9f3306e6 \
                    -Dsonar.java.binaries=. \
-                   -Dsonar.projectKey=devops-ex '''
+                   -Dsonar.projectKey=devopsex '''
            }
        }
 
