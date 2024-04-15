@@ -29,9 +29,19 @@ pipeline {
 
 
             stage('Test(JUNIT)') {
-            steps {
-                sh 'mvn test'
+                steps {
+                    script{
+                        sh 'mvn test .'
+                        }
+                }
             }
-        }
+            stage('Sonar Analysis'){
+                steps{
+                    sh "mvn clean package"
+                    sh ''' mvn sonar:sonar -Dsonar.url-http://http://192.168.1.15:9000/ -Dsonar.login=squ_4b6e229071836816a71e20f9105c4f042babe050
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=devops-ex '''
+                }
+            }
     }
 }
