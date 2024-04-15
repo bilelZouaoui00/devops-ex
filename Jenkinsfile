@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-    maven 'maven'
+        maven 'maven'
     }
 
     stages {
@@ -21,36 +21,33 @@ pipeline {
             }
         }
 
-        // stage ('Build docker image'){ ... } (uncomment if needed)
-
         stage('Test(JUNIT)') {
-                     steps{
-                          sh 'mvn test'
-                          }
-         }
-                 stage('Build Docker Image') {
-                     steps {
-                         // Build Docker image using Dockerfile in the project directory
-                         sh 'docker build -t DevopsIntegration .'
-                     }
-                 }
+            steps {
+                sh 'mvn test'
+            }
+        }
 
+        stage('Build Docker Image') {
+            steps {
+                // Build Docker image using Dockerfile in the project directory
+                sh 'docker build -t DevopsIntegration .'
+            }
+        }
 
-       stage('Sonar Analysis'){
-           steps{
-               // Option 1: Run tests & generate Jacoco report
-               sh 'mvn clean package'  // Assuming this generates Jacoco report
+        stage('Sonar Analysis') {
+            steps {
+                // Option 1: Run tests & generate Jacoco report
+                sh 'mvn clean package'
 
-               // Option 2: If report generated elsewhere
-               // sh 'cp path/to/your/jacoco.exec ${project.basedir}/../target/jacoco.exec'
+                // Option 2: If report generated elsewhere
+                // sh 'cp path/to/your/jacoco.exec ${project.basedir}/../target/jacoco.exec'
 
-               sh '''mvn clean package sonar:sonar \
-                   -Dsonar.url=http://192.168.1.15:9000/ \
-                   -Dsonar.login=squ_45fef69b3887d4511b74274e2e4b8d959c7b0f2f \
-                   -Dsonar.java.binaries=. \
-                   -Dsonar.projectKey=devopsex '''
-           }
-       }
-
+                sh '''mvn clean package sonar:sonar \
+                    -Dsonar.url=http://192.168.1.15:9000/ \
+                    -Dsonar.login=squ_45fef69b3887d4511b74274e2e4b8d959c7b0f2f \
+                    -Dsonar.java.binaries=. \
+                    -Dsonar.projectKey=devopsex '''
+            }
+        }
     }
 }
