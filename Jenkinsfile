@@ -35,10 +35,10 @@ pipeline {
                 // sh 'cp path/to/your/jacoco.exec ${project.basedir}/../target/jacoco.exec'
 
                 sh '''mvn clean package sonar:sonar \
-                    -Dsonar.url=http://192.168.1.15:9000/ \
-                    -Dsonar.login=squ_f611dd88c6ac1d4a02702ff70200e36b9f3306e6 \
-                    -Dsonar.java.binaries=. \
-                    -Dsonar.projectKey=devops-ex '''
+                            -Dsonar.url=http://<container_ip>:9000/ \
+                            -Dsonar.login=squ_f611dd88c6ac1d4a02702ff70200e36b9f3306e6 \
+                            -Dsonar.java.binaries=. \
+                            -Dsonar.projectKey=devops-ex '''
             }
         }
     }
