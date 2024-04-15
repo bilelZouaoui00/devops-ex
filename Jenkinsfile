@@ -27,12 +27,12 @@ pipeline {
             }
         }
 
-        stage('Build Docker Image') {
-            steps {
+        //stage('Build Docker Image') {
+          //  steps {
                 // Build Docker image using Dockerfile in the project directory
-                sh 'docker build -t DevopsIntegration .'
-            }
-        }
+            //    sh 'docker build -t DevopsIntegration .'
+            //}
+        //}
 
         stage('Sonar Analysis') {
             steps {
