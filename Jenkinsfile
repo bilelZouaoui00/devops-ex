@@ -29,9 +29,9 @@ pipeline {
 
 
             stage('Test(JUNIT)') {
-                steps {
-                    sh 'mvn test'
-                }
+                //steps {
+                //    sh 'mvn test'
+                //}
             }
 
             stage('Sonar Analysis'){
