@@ -29,7 +29,7 @@ pipeline {
 
             stage('Test(JUNIT)') {
             steps {
-                sh 'mvn test'
+                sh './mvnw test'
             }
         }
     }
