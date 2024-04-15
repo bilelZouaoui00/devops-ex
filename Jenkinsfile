@@ -28,11 +28,11 @@ pipeline {
         // }
 
 
-            stage('Test(JUNIT)') {
-                steps {
+            //stage('Test(JUNIT)') {
+              //  steps {
                 //    sh 'mvn test'
-                }
-            }
+                //}
+            //}
 
             stage('Sonar Analysis'){
                 steps{
