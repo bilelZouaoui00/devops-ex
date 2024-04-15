@@ -20,7 +20,11 @@ pipeline {
 
         // stage ('Build docker image'){ ... } (uncomment if needed)
 
-        // stage('Test(JUNIT)') { ... } (uncomment if needed)
+        stage('Test(JUNIT)') {
+                     steps{
+                          sh 'mvn test'
+                          }
+         }
 
         stage('Sonar Analysis'){
             steps{
