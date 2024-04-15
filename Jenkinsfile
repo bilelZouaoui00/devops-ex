@@ -30,11 +30,15 @@ pipeline {
 
             stage('Test(JUNIT)') {
                 steps {
-                    script{
-                        sh 'mvn test .'
-                        }
+                    sh 'mvn test'
+                }
+                post {
+                    always {
+                        junit 'target/surefire-reports/*.xml'
+                    }
                 }
             }
+
             stage('Sonar Analysis'){
                 steps{
                     sh "mvn clean package"
