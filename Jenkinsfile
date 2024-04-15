@@ -36,7 +36,7 @@ pipeline {
 
                 sh '''mvn clean package sonar:sonar \
                     -Dsonar.url=http://192.168.1.15:9000/ \
-                    -Dsonar.login=squ_4b6e229071836816a71e20f9105c4f042babe050 \
+                    -Dsonar.login=squ_f611dd88c6ac1d4a02702ff70200e36b9f3306e6 \
                     -Dsonar.java.binaries=. \
                     -Dsonar.projectKey=devops-ex '''
             }
