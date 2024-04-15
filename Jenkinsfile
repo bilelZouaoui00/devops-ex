@@ -19,6 +19,7 @@ pipeline {
         }
 
         // stage ('Build docker image'){
+        // stage ('Build docker image'){
         //     steps{
         //         script {
         //             sh 'docker build -t bilelZouaoui00/DevopsIntegration .'
